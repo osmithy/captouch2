@@ -30,6 +30,7 @@
 #define bitWrite(value, bit, bitvalue) (bitvalue ? bitSet(value, bit) : bitClear(value, bit))
 #endif
 
+
 //------------------- centigrade  -------------------------
 MPR121::MPR121()
 {
@@ -180,41 +181,8 @@ void MPR121::begin(void){
 }
 
 
-int8_t MPR121::wheelKey(void)
-{
-      switch(touch())
-      {
-		case 0x0001:
-			return 1;  // Electrode 0
-		break;
-		case 0x0002:
-			return 2;  // Electrode 1
-		break;
-		case 0x0004:
-			return 5;  // Electrode 2 
-		break;
-		case 0x0008:
-			return 7;  // Electrode 3 
-		break;
-		case 0x0010:
-			return 9;  // Electrode 4 
-		break;
-		case 0x0020:
-			return 11;  // Electrode 5
-		break;
-		case 0x0040:
-			return 13;  // Electrode 6
-		break;
-		case 0x0080:
-			return 15;  // Electrode 7
-		break;
-		default:
-			return -1;  // Release
-		break;		
-      }
-}
 
-/*
+
 //------------------- centigrade  -------------------------
 int8_t MPR121::wheelKey(void)
 {
@@ -276,7 +244,6 @@ int8_t MPR121::wheelKey(void)
 		break;		
       }
 }
-*/
 
 //------------------- centigrade  -------------------------
 int8_t MPR121::keyPad(void)
